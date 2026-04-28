@@ -1,12 +1,19 @@
 name: Workflow-2
-on: push 
+on:
+ - push 
+ - workflow_dispatch
 jobs:
-  job1:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Running Multiple OS Cmds
-      run: |
-        pwd
-        ls -l
-        printenv
-        hostnamectl 
+   Linux-Job:
+     runs-on: ubuntu-latest
+     steps:
+     - name: Execute Multipple Cmd
+       run: |
+          pwd
+          echo "This i Test Step"
+     - name: Checking Docker Verstion
+       run: docker info     
+   Windows-Job: 
+     runs-on: windows-latest
+     steps:
+     - name: display list of files
+       run : dir      
