@@ -1,19 +1,29 @@
 name: Workflow-2
-on:
- - push 
- - workflow_dispatch
+on: workflow_dispatch
 jobs:
-   Linux-Job:
+   Linux-Job1:
      runs-on: ubuntu-latest
      steps:
      - name: Execute Multipple Cmd
        run: |
-          pwd
+          date
+          sleep 20
           echo "This i Test Step"
      - name: Checking Docker Verstion
-       run: docker info     
-   Windows-Job: 
+       run: docker info  
+   Linux-Job2:
+     needs: Linux-Job1
+     runs-on: ubuntu-latest
+     steps:
+     run : date     
+   Windows-Job:
+     needs: [Linux-Job1,Linux-Job2]   
      runs-on: windows-latest
      steps:
      - name: display list of files
        run : dir      
+       
+       
+       
+  
+  
