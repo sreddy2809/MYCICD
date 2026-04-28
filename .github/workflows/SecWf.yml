@@ -15,7 +15,8 @@ jobs:
      needs: Linux-Job1
      runs-on: ubuntu-latest
      steps:
-     run : date     
+     - name: Current system Date
+       run : date     
    Windows-Job:
      needs: [Linux-Job1,Linux-Job2]   
      runs-on: windows-latest
