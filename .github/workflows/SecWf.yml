@@ -1,0 +1,12 @@
+name: Workflow-2
+on: push 
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Running Multiple OS Cmds
+      run: |
+        pwd
+        ls -l
+        printenv
+        hostnamectl 
