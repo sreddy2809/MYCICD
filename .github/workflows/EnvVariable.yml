@@ -1,0 +1,26 @@
+name: Workflow-4 Env Variables
+on: workflow_dispatch
+env:
+   IMAGE_NAME: NB_APP
+   IMAGE_VER: V1
+jobs:
+  Jobx:
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: NB_APP_TEST
+    steps:
+    - name: step-1
+      run: echo "IMAGE NAME is : $IMAGE_NAME "
+    - name: step-2
+      env:
+        IMAGE_NAME: NB_APP_UAT
+      run: echo "IMAGE_NAME is : $IMAGE_NAME "
+    - name: step-3
+      run:  echo "IMAGE_NAME is : $IMAGE_NAME "
+  Joby:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Job2-Step1
+      echo: echo "IMAGE_NAME is : $IMAGE_NAME "
+  
+    
