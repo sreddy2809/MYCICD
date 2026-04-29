@@ -7,19 +7,18 @@ jobs:
        name: Sheshivardhan
        Rel: V1.10
      steps:
-     - name: Execute Multipple Cmd
+     - name: Step1
+       env:
+         DB_USER: Scott       
        run: |
           date
           echo "This i Test Step"
-          echo "Name Value is: $name and Rel Verstion $Rel" 
-     - name: Checking Docker Verstion
+          echo "Name Value is: $name and Rel Verstion $Rel"
+          echo "DB USSER $DB_USER"          
+          
+     - name: Step2
        run: | 
          echo "Step2"
-         echo "Name Value is: $name and Rel Verstion $Rel"  
-   Linux-Job2:
-     needs: Linux-Job1
-     runs-on: ubuntu-latest
-     steps:
-     - name: Current system Date
-       run: |
-         echo "in Job2: Name Value is: $name and Rel Verstion $Rel"
+         echo "Name Value is: $name and Rel Verstion $Rel"
+         echo "DB USSER $DB_USER"         
+   
