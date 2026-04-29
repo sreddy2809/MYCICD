@@ -10,13 +10,12 @@ jobs:
      - name: Execute Multipple Cmd
        run: |
           date
-          sleep 20
           echo "This i Test Step"
           echo "Name Value is: $name and Rel Verstion $Rel" 
      - name: Checking Docker Verstion
        run: | 
-       echo "Step2"
-       echo "Name Value is: $name and Rel Verstion $Rel"  
+         echo "Step2"
+         echo "Name Value is: $name and Rel Verstion $Rel"  
    Linux-Job2:
      needs: Linux-Job1
      runs-on: ubuntu-latest
