@@ -1,11 +1,11 @@
 name: Workflow-3
 on: workflow_dispatch
-env:
-  name: Sheshivardhan
-  Rel: V1.10
 jobs:
    Linux-Job1:
      runs-on: ubuntu-latest
+     env:
+       name: Sheshivardhan
+       Rel: V1.10
      steps:
      - name: Execute Multipple Cmd
        run: |
