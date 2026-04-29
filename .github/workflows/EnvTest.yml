@@ -21,4 +21,5 @@ jobs:
      runs-on: ubuntu-latest
      steps:
      - name: Current system Date
-       run: echo "in Job2: Name Value is: $name and Rel Verstion $Rel"
+       run: |
+         echo "in Job2: Name Value is: $name and Rel Verstion $Rel"
