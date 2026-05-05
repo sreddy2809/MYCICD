@@ -1,6 +1,8 @@
 name: Build Docker Image
 on: workflow_dispatch
 jobs:
+  env:
+    image_name: docker.io/svreddyaws56/testimage1 
   Build_Image:
     runs-on: ubuntu-latest
     steps:
@@ -11,4 +13,13 @@ jobs:
     - name: ImageBuild
       run: |
          docker info
+         cd MYCICD
+         docker build -t $image_name
+         docker images
+    - name: Image Push 
+      run: |
+         docker login -u svreddyaws56 -p ${{ secrets.DOCKER_REG_PASSWD }}
+         docker push $image_name        
+
+
 
