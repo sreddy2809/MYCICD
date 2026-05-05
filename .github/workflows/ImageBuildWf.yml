@@ -22,6 +22,6 @@ jobs:
          docker push $image_name  
     - name: Deploy into Xserver
       run: |
-        ssh -i ${{ XSERVERPRVKEY }} -o StrictHostKeyChecking=no ubuntu@13.203.210.86 pwd
+        ssh -i ${{ secrets.XSERVERPRVKEY }} -o StrictHostKeyChecking=no ubuntu@13.203.210.86 pwd
             
 
