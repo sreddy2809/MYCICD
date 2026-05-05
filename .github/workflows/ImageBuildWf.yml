@@ -1,5 +1,5 @@
 name: Build Docker Image
-on: workflow_disptach
+on: workflow_dispatch
 jobs:
   Build_Image:
     runs-on: ubuntu-latest
@@ -11,3 +11,4 @@ jobs:
     - name: ImageBuild
       run: |
          docker info
+
