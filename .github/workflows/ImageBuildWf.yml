@@ -2,7 +2,7 @@ name: Build Docker Image
 on: workflow_disptach
 jobs:
   Build_Image:
-  runs_on: ubuntu-latest
+  runs-on: ubuntu-latest
   steps:
   - name: Downlond Code
     run: |
