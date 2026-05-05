@@ -21,12 +21,9 @@ jobs:
          docker login -u svreddyaws56 -p ${{ secrets.DOCKER_REG_PASSWD }}
          docker push $image_name  
     - name: Deploy into Xserver
+      env:
+        key1: ${{ secrets.XSERVERPRVKEY }}
       run: |
-        cat << 'EOF' > key1
-        ${{ secrets.XSERVERPRVKEY }}
-        EOF
-        cat key1
-        chmod 600 key1
-        ssh -i key1 -o StrictHostKeyChecking=no ubuntu@13.203.210.86 docker run -d $image_name
+        ssh -i $key1 -o StrictHostKeyChecking=no ubuntu@13.232.215.80 pwd
             
 
