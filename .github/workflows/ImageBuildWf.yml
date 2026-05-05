@@ -19,7 +19,9 @@ jobs:
     - name: Image Push 
       run: |
          docker login -u svreddyaws56 -p ${{ secrets.DOCKER_REG_PASSWD }}
-         docker push $image_name        
-
-
+         docker push $image_name  
+    - name: Deploy into Xserver
+      run: |
+        ssh -i ${{ XSERVERPRVKEY }} -o StrictHostKeyChecking=no ubuntu@13.203.210.86 pwd
+            
 
