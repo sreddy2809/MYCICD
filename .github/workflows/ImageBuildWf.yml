@@ -1,0 +1,13 @@
+name: Build Docker Image
+on: workflow_disptach
+jobs:
+  Build_Image:
+  runs_on: ubuntu-latest
+  steps:
+  - name: Downlond Code
+    run: |
+      git clone https://github.com/sreddy2809/MYCICD.git
+      ls -l
+  - name: ImageBuild
+    run: |
+      docker info
