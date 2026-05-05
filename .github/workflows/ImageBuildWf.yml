@@ -1,9 +1,9 @@
 name: Build Docker Image
 on: workflow_dispatch
 jobs:
-  env:
-    image_name: docker.io/svreddyaws56/testimage1 
   Build_Image:
+    env:
+      image_name: docker.io/svreddyaws56/testimage1 
     runs-on: ubuntu-latest
     steps:
     - name: Downlond Code
