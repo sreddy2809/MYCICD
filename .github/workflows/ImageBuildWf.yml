@@ -26,6 +26,7 @@ jobs:
         ${{ secrets.XSERVERPRVKEY }}
         EOF
         cat key1
-        ssh -i key1 -o StrictHostKeyChecking=no ubuntu@13.203.210.86 pwd
+        chmod 600 key1
+        ssh -i key1 -o StrictHostKeyChecking=no ubuntu@13.203.210.86 docker run -d $image_name
             
 
