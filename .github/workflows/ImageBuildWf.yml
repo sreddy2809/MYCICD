@@ -22,7 +22,9 @@ jobs:
          docker push $image_name  
     - name: Deploy into Xserver
       run: |
-        echo ${{ secrets.XSERVERPRVKEY }} > key1
+        cat << 'EOF' > key1
+        ${{ secrets.XSERVERPRVKEY }}
+        EOF
         cat key1
         ssh -i key1 -o StrictHostKeyChecking=no ubuntu@13.203.210.86 pwd
             
