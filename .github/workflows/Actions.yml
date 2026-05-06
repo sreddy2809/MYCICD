@@ -13,4 +13,11 @@ jobs:
        uses: docker/login-action@v4
        with:
          username: svreddyaws56 
-         password: ${{ secrets.DOCKER_REG_PASSWD }}         
+         password: ${{ secrets.DOCKER_REG_PASSWD }} 
+     - name: Docker Build & Push 
+       uses: docker/build-push-action@v7
+       with:
+          context: .
+          tags: docker.io/svreddyaws56/testimagex
+          push: true          
+                    
