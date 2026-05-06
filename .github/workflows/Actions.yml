@@ -12,5 +12,5 @@ jobs:
      - name: Docker Login
        uses: docker/login-action@v4
        with:
-         user_name: svreddyaws56 
+         username: svreddyaws56 
          password: ${{ secrets.DOCKER_REG_PASSWD }}         
