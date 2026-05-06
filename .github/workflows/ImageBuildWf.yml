@@ -23,7 +23,7 @@ jobs:
     - name: Deploy into Xserver
     
       run: |
-        echo ${{ secrets.XSERVERPRVKEY }} > key1
+        echo "${{ secrets.XSERVERPRVKEY }}" > key1
         cat key1
         ssh -i key1 -o StrictHostKeyChecking=no ubuntu@13.203.159.71 docker run -d $image_name
         
