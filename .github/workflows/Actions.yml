@@ -1,0 +1,11 @@
+name: Testing Inbuil Actions
+on: workflow_dispatch
+jobs:
+   testjob:
+     runs-on: ubuntu-latest
+     steps:
+     - name: Checkout the code
+       uses: actions/checkout@v6
+     - name: Disply List of files
+       run: |
+           ls -l       
