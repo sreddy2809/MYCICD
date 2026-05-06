@@ -19,5 +19,17 @@ jobs:
        with:
           context: .
           tags: docker.io/svreddyaws56/testimagex
-          push: true          
+          push: true 
+     - name: Deploy Application
+       uses: appleboy/ssh-action@v1
+       with:
+         host: '13.203.159.71'
+         username: ubuntu
+         key: ${{ secrets.XSERVERPRVKEY }}
+         script: |
+            whoami
+            docker run -d docker.io/svreddyaws56/testimagex
+            docker ps -a 
+            
+         
                     
