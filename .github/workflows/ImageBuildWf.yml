@@ -24,6 +24,8 @@ jobs:
     
       run: |
         echo "${{ secrets.XSERVERPRVKEY }}" > key1
-        cat key1
+        ls -l 
+        chmod 600 key1
+        ls -l
         ssh -i key1 -o StrictHostKeyChecking=no ubuntu@13.203.159.71 docker run -d $image_name
         
