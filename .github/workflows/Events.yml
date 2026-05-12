@@ -1,10 +1,10 @@
 name: WFEvent-filters
 on: 
- - workflow_dispatch:
- -  push:
+    push:
       branches:
       - B1
       - master
+    workflow_dispatch:  
 jobs:
    job1:
      runs-on: ubuntu-latest
