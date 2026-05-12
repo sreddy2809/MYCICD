@@ -5,11 +5,11 @@ on:
     - B1
 jobs:
    job1:
-     runs-on: ubuntu_latest
+     runs-on: ubuntu-latest
      steps:
      - name: Print MSg
        run: |
-          echo " Hello Wolrd"	   
+          echo "Hello Wolrd"	   
           
           
           
