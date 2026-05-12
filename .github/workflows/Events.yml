@@ -3,14 +3,15 @@ on:
   push:
     branches:
     - B1
+    - master
 jobs:
    job1:
      runs-on: ubuntu-latest
      steps:
      - name: Print MSg
        run: |
-          echo "Hello Wolrd"	   
-          
-          
-          
-          
+          echo "Hello Wolrd"
+          echo "Event name is ${{ github.event_name }}"  
+          echo "Branch Name ${{ github.ref }}"          
+          echo "RunId ${{ github.run_number }}" 
+          echo "Commit Id ${{ github.sha }}"          
