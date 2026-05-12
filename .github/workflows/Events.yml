@@ -1,7 +1,8 @@
 name: Event filters
 on: 
   push:
-   - B1
+    branches:
+    - B1
 jobs:
    job1:
      runs-on: ubuntu_latest
@@ -9,3 +10,7 @@ jobs:
      - name: Print MSg
        run: |
           echo " Hello Wolrd"	   
+          
+          
+          
+          
