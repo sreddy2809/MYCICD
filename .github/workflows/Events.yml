@@ -1,4 +1,4 @@
-name: Event filters
+name: WFEvent-filters
 on: 
   workflow_dispatch:
   push:
