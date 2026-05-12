@@ -1,0 +1,11 @@
+name: Event filters
+on: 
+  push:
+   - B1
+jobs:
+   job1:
+     runs-on: ubuntu_latest
+     steps:
+     - name: Print MSg
+       run: |
+          echo " Hello Wolrd"	   
